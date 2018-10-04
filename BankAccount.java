@@ -24,6 +24,19 @@ public class BankAccount{
   public void setPassword(String password) {
     this.password = password;
   }
-  //public void deposit()
+  public boolean deposit(double input) {
+    if (input < 0) return false;
+    else {
+      balance += input;
+      return true;
+    }
+  }
+  public boolean withdraw(double input) {
+    if ((input > balance) || (input < 0)) return false;
+    else {
+      balance -= input;
+      return true;
+    }
+  }
 
 }
