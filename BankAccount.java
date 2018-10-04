@@ -12,12 +12,18 @@ public class BankAccount{
   }
 
   // methods
+  public String toString() {
+    return accountID + "\t" + balance;
+  }
   public double getBalance(){
     return balance;
   }
   public int getAccountID(){
     return accountID;
   }
-
+  public void setPassword(String password) {
+    this.password = password;
+  }
+  //public void deposit()
 
 }
