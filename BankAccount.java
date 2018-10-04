@@ -5,7 +5,7 @@ public class BankAccount{
   private String password;
 
   // constructor
-  public BankAccount(int accountID, double balance, String password){
+  public BankAccount(double balance, int accountID, String password){
     this.balance = balance;
     this.accountID = accountID;
     this.password = password;
@@ -37,6 +37,15 @@ public class BankAccount{
       balance -= input;
       return true;
     }
+  }
+  private boolean authenticate(String password) {
+    return (password == this.password);
+  }
+  public boolean transferTo(BankAccount other, double amount, String password) {
+    if other.authenticate(password) {
+      return (this.withdraw(amount) && other.deposit(amount));
+    }
+    else return false;
   }
 
 }
